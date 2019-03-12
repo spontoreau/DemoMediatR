@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using DemoMediatR.WebApi.Context;
+using DemoMediatR.WebApi.Filters;
 
 namespace DemoMediatR.WebApi
 {
@@ -27,8 +29,10 @@ namespace DemoMediatR.WebApi
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services
                 .AddMvc()
+                .AddMvcOptions(options => options.Filters.Add<DomainExceptionFilterAttribute>())
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>())                
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddDbContext<DataContext>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
