@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace DemoMediatR.Domain 
+namespace DemoMediatR.WebApi.Domain.Person.Create 
 {
     public class CreatePerson : IRequest
     {

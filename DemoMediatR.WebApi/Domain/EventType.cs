@@ -1,4 +1,4 @@
-namespace DemoMediatR.Domain
+namespace DemoMediatR.WebApi.Domain
 {
     public enum EventType
     {

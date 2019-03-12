@@ -2,7 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 
-namespace DemoMediatR.Domain
+namespace DemoMediatR.WebApi.Domain.Person.Create 
 {
     public class CreatePersonHandler : IRequestHandler<CreatePerson>
     {

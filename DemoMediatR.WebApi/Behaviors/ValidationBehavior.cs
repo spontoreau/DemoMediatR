@@ -1,4 +1,4 @@
-﻿using DemoMediatR.Domain;
+﻿using DemoMediatR.WebApi.Domain;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DemoMediatR.DomainBehaviors
+namespace DemoMediatR.WebApi.Behaviors
 {
     public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
@@ -29,7 +29,6 @@ namespace DemoMediatR.DomainBehaviors
 
                     if (validationResult != null && !validationResult.IsValid)
                         throw new ValidationException("Validation failed!", validationResult.Errors);
-
             }
             return await next();
         }

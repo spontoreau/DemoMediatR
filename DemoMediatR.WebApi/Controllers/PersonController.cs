@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using DemoMediatR.Domain;
+using DemoMediatR.WebApi.Domain.Person.Create;
+using DemoMediatR.WebApi.Domain.Person.Retreive;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,9 +19,9 @@ namespace DemoMediatR.WebApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public async Task<IEnumerable<PersonReadModel>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return await Mediator.Send(new GetAllPerson());
         }
 
         [HttpPost]

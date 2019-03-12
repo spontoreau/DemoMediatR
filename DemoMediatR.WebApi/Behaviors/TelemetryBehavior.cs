@@ -1,4 +1,4 @@
-﻿using DemoMediatR.Domain;
+﻿using DemoMediatR.WebApi.Domain;
 using MediatR;
 using Microsoft.ApplicationInsights;
 using Newtonsoft.Json;
@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DemoMediatR.DomainBehaviors
+namespace DemoMediatR.WebApi.Behaviors
 {
     public class TelemetryBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
