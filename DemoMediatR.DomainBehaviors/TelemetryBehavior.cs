@@ -18,7 +18,7 @@ namespace DemoMediatR.DomainBehaviors
             var attribute = request
                 .GetType()
                 .GetCustomAttributes()
-                .SingleOrDefault(a => a.GetType() == typeof(DomainEventAttribute)) as DomainEventAttribute;
+                .SingleOrDefault(a => a.GetType() == typeof(EventAttribute)) as EventAttribute;
 
             if(attribute !=  null)
             {

@@ -1,6 +1,6 @@
 namespace DemoMediatR.Domain
 {
-    public enum DomainEventType
+    public enum EventType
     {
         Retrieve,
         Create,

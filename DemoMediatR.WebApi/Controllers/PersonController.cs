@@ -6,29 +6,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DemoMediatR.WebApi.Controllers
 {
-    [Route("api/employee")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class EmployeeController : ControllerBase
+    public class PersonController : ControllerBase
     {
         private IMediator Mediator { get; }
 
-        public EmployeeController(IMediator mediator)
+        public PersonController(IMediator mediator)
         {
             Mediator = mediator;
         }
 
-        // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // POST api/values
         [HttpPost]
-        public async Task<bool> Post()
+        public async Task Post(CreatePerson createPerson)
         {
-            return await Mediator.Send<bool>(new CreateEmployeeCommand());
+            await Mediator.Send(createPerson);
         }
     }
 }

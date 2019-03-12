@@ -3,15 +3,15 @@
 namespace DemoMediatR.Domain
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-    public class DomainEventAttribute : Attribute
+    public class EventAttribute : Attribute
     {
-        public DomainEventAttribute(string domainName, DomainEventType type)
+        public EventAttribute(string domainName, EventType type)
         {
             DomainName = domainName;
             Type = type;
         }
 
-        public DomainEventType Type { get; }
+        public EventType Type { get; }
         public string DomainName { get; }
     }
 }
