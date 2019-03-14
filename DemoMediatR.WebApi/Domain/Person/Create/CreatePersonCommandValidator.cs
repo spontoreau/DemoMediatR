@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace DemoMediatR.WebApi.Domain.Person.Create 
 {
-    public class CreatePersonValidator : AbstractValidator<CreatePersonCommand>
+    public class CreatePersonCommandValidator : AbstractValidator<CreatePersonCommand>
     {
-        public CreatePersonValidator()
+        public CreatePersonCommandValidator()
         {
             RuleFor(e => e.FirstName)
                 .NotNull()

@@ -7,11 +7,11 @@ using System;
 
 namespace DemoMediatR.WebApi.Domain.Person.Create 
 {
-    public class CreatePersonHandler : IRequestHandler<CreatePersonCommand>
+    public class CreatePersonCommandHandler : IRequestHandler<CreatePersonCommand>
     {
         DataContext Context { get; }
 
-        public CreatePersonHandler(DataContext context)
+        public CreatePersonCommandHandler(DataContext context)
         {
             Context = context;
         }
