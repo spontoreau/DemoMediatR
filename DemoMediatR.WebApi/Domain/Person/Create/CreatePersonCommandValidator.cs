@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace DemoMediatR.WebApi.Domain.Person.Create 
 {
-    public class CreatePersonValidator : AbstractValidator<CreatePerson>
+    public class CreatePersonValidator : AbstractValidator<CreatePersonCommand>
     {
         public CreatePersonValidator()
         {

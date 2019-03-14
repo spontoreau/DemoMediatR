@@ -21,11 +21,11 @@ namespace DemoMediatR.WebApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<PersonReadModel>> Get()
         {
-            return await Mediator.Send(new GetAllPerson());
+            return await Mediator.Send(new GetAllPersonQuery());
         }
 
         [HttpPost]
-        public async Task Post(CreatePerson createPerson)
+        public async Task Post(CreatePersonCommand createPerson)
         {
             await Mediator.Send(createPerson);
         }

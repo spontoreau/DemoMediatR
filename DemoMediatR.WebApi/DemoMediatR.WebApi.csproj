@@ -15,10 +15,4 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.3" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DemoMediatR.DomainBehaviors\DemoMediatR.DomainBehaviors.csproj" />
-    <ProjectReference Include="..\DemoMediatR.Domain\DemoMediatR.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

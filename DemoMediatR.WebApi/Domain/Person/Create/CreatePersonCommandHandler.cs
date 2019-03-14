@@ -7,7 +7,7 @@ using System;
 
 namespace DemoMediatR.WebApi.Domain.Person.Create 
 {
-    public class CreatePersonHandler : IRequestHandler<CreatePerson>
+    public class CreatePersonHandler : IRequestHandler<CreatePersonCommand>
     {
         DataContext Context { get; }
 
@@ -16,7 +16,7 @@ namespace DemoMediatR.WebApi.Domain.Person.Create
             Context = context;
         }
 
-        public async Task<Unit> Handle(CreatePerson request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreatePersonCommand request, CancellationToken cancellationToken)
         {
             bool canCreate = !Context.Persons.Any(p => p.Email == request.Email);
 

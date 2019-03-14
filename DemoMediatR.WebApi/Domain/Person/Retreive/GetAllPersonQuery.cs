@@ -3,7 +3,7 @@ using MediatR;
 
 namespace DemoMediatR.WebApi.Domain.Person.Retreive 
 {
-    public class GetAllPerson : IRequest<IEnumerable<PersonReadModel>>
+    public class GetAllPersonQuery : IRequest<IEnumerable<PersonReadModel>>
     {
 
     }
